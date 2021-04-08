@@ -11,7 +11,7 @@ Step 4: Performing the analysis
 Step 5: Printing the data in required format using formatted string
 
 """
-
+import matplotlib.pyplot as plt
 print("A Simple Data Analysis Program")
 print()
 
@@ -25,7 +25,9 @@ print("All data from Emissions.csv has been read into a dictionary.", end='\n\n'
 """
 Step 1: Take the input from user
 """
-input_year = '2009'
+
+# TODO: input_year = input('Enter the year for which you'd like to see the data: ')
+input_year = '2001'
 
 index_of = None
 lines = []
@@ -78,4 +80,56 @@ print(f'In {input_year}, countries with minimum and maximum CO2 emission levels 
       f'and [{max_emission}] respectively.')
 print(
     f'Average CO2 emissions in {input_year} were {"%.6f" % round(average_emissions, 6)}')
+print()
+
+"""
+Step 6: Take the input from user to visualize data
+"""
+# TODO: visualize_country = input('Enter the country for which you'd like to visualize the data)
+# TODO: Exception Handling
+visualize_country = 'Qatar'
+
+"""
+Step 7: Getting the index of Country and passing it to plot function, Setting the Title and Label of Plot
+"""
+
+# From user entered value we extracted the Index value of country
+number = list(emission_dict.keys()).index(visualize_country)
+# Passed that index value to matplotlib plot function. As x value we passed years and as y value we passed emission value
+plt.plot(list(map(float, list(emission_dict.values())[0])),
+         list(map(float, list(emission_dict.values())[number])))
+# Given the Title and Lable to Plot
+plt.title("Year vs Emissions in Capita")
+plt.xlabel("Year")
+plt.ylabel("Emissions in " + visualize_country.title())
+plt.show()
+print()
+
+
+"""
+Step 8: Take two comma-separated countries input from user
+"""
+# TODO:country1, country2 = input("Write two comma-separated countries for which you want to visualize data: ").split(", ")
+country1, country2 = 'India', 'Qatar'
+"""
+Step 9: Extracting the Index number for both countries
+"""
+
+index_num_1 = list(emission_dict.keys()).index(country1)
+index_num_2 = list(emission_dict.keys()).index(country2)
+
+"""
+Step 10: Passing the value to plot function and setting up label for country
+"""
+
+# In this task we combined two plots in one and given the label to identify.
+plt.plot(list(map(float, list(emission_dict.values())[0])),
+         list(map(float, list(emission_dict.values())[index_num_1])), label=country1)
+plt.plot(list(map(float, list(emission_dict.values())[0])),
+         list(map(float, list(emission_dict.values())[index_num_2])), label=country2)
+plt.title("Year vs Emissions in Capita")
+plt.xlabel("Year")
+plt.ylabel("Emissions")
+plt.legend()
+plt.show()
 print()

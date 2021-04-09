@@ -18,8 +18,8 @@ print()
 emission_dict = {}
 
 with open('Emissions.csv', 'r') as file:
-    for data in file.read().split('\n'):
-        emission_dict.update({data.split(',')[0]: data.split(',')[1:]})
+  for data in file.read().split('\n'):
+    emission_dict.update({data.split(',')[0]: data.split(',')[1:]})
 
 print("All data from Emissions.csv has been read into a dictionary.", end='\n\n')
 """
@@ -36,8 +36,9 @@ Step 2: Extracting index of the year
 """
 # Loop through First VALUE of Dictionary and if year present in list then set index of VALUE as index_of
 for item in emission_dict.values():
-    if input_year in item:
-        index_of = (item.index(input_year))
+  if input_year in item:
+    index_of = (item.index(input_year))
+
 
 total = 0
 i = 0
@@ -47,13 +48,13 @@ Step 3: Creating the list of emission in year
 """
 # Loop through VALUES of Dictionary
 for value in emission_dict.values():
-    # For the first loop skip the code because in our case it contains Column Names and Years
-    if i != 0:
-        # Add VALUE of Emission to total
-        total += float(value[index_of])
-        # Append the value to emissions_in_year
-        emissions_in_year.append(list(emission_dict.values())[i][index_of])
-    i += 1
+  # For the first loop skip the code because in our case it contains Column Names and Years
+  if i != 0:
+    # Add VALUE of Emission to total
+    total += float(value[index_of])
+    # Append the value to emissions_in_year
+    emissions_in_year.append(list(emission_dict.values())[i][index_of])
+  i += 1
 
 
 """
@@ -133,3 +134,50 @@ plt.ylabel("Emissions")
 plt.legend()
 plt.show()
 print()
+
+
+"""
+Step 11: Creating function that will take one list input - Check for maximum three countries and write to Emissions_subset.csv file
+"""
+
+
+def extract_data(country):
+  list_len = len(country)
+  for length in range(0, list_len):
+    # Validating input up to three countries - If there are more then three countries then return false
+    if list_len > 3:
+      print("ERR: Sorry, at most 3 countries can be entered.", end="\n\n")
+      return False
+  else:
+    # Creating string to write in CSV File
+    write_line_csv = list(emission_dict.keys())[0].title(
+    ) + "," + ",".join(list(emission_dict.values())[0]) + "\n"
+    for num in range(0, len(country)):
+      write_line_csv += country[num].title() + "," + ",".join(
+          emission_dict[country[num]]) + "\n"
+    # Open CSV in write mode and writing lines to CSV
+    with open('Emissions_subset.csv', 'w') as new_file:
+      new_file.writelines(write_line_csv)
+    # Printing the value in required format
+    print(f"Data successfully extracted for countries " + ", ".join(
+        country).title() + " saved into file Emissions_subset.csv", end="\n\n")
+  return True
+
+
+print("A Simple Data Analysis Program")
+print()
+
+
+"""
+Step 12: Take input up to three comma-separated countries and creating list of countries (Passing value to our function)
+"""
+
+while True:
+  #TODO: input_string = input("Write up to three comma-separated countries for which you want to extract data: ")
+  input_string = 'India, Oman, Qatar'
+  input_country = input_string.split(", ")
+  # Calling the Function to validate input
+  if not extract_data(input_country):
+    continue
+  else:
+    break

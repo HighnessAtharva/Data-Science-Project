@@ -8,6 +8,8 @@ Creating a Data Analysis Application, all at once may seem a herculean task, and
 ### Today we start with the first module – Read CSV File and store data in the dictionary
 
 The goal of today's task is to get the following output:-
+
+
 ![Day 1](https://github.com/HighnessAtharva/Data-Science-Project/blob/main/Day1.jpg)
 
 It may look scary, but it's not that difficult. The screen consists of following

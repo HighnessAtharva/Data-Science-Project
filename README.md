@@ -36,6 +36,8 @@ The goal of today's task is to get the following output:-
 ### Plot the emissions data from a user-selected country
 
 It's time to visualize the data. Plot the emissions data from a user-selected country. You should use Python plotting library matplotlib for drawing the plots. The below should be your output.
+
+
 ![Day 3](https://github.com/HighnessAtharva/Data-Science-Project/blob/main/Day3.jpg)
 
 

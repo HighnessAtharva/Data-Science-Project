@@ -10,7 +10,7 @@ Creating a Data Analysis Application, all at once may seem a herculean task, and
 The goal of today's task is to get the following output:-
 
 
-![Day 1](https://github.com/HighnessAtharva/Data-Science-Project/blob/main/Day1.jpg)
+![Day 1](https://github.com/HighnessAtharva/Data-Science-Project/blob/main/Day1.png)
 
 It may look scary, but it's not that difficult. The screen consists of following
 
@@ -29,7 +29,7 @@ At this stage, your goal is to simply read file. The challenge is you can’t us
 The goal of today's task is to get the following output:-
 
 
-![Day 2](https://github.com/HighnessAtharva/Data-Science-Project/blob/main/Day2.jpg)
+![Day 2](https://github.com/HighnessAtharva/Data-Science-Project/blob/main/Day2.png)
 
 ## DAY 3
 
@@ -38,7 +38,7 @@ The goal of today's task is to get the following output:-
 It's time to visualize the data. Plot the emissions data from a user-selected country. You should use Python plotting library matplotlib for drawing the plots. The below should be your output.
 
 
-![Day 3](https://github.com/HighnessAtharva/Data-Science-Project/blob/main/Day3.jpg)
+![Day 3](https://github.com/HighnessAtharva/Data-Science-Project/blob/main/Day3.png)
 
 
 ## DAY 4
@@ -47,7 +47,7 @@ It's time to visualize the data. Plot the emissions data from a user-selected co
 
 Using the Matplotlib library, plot two graphs with distinct colours and legend so see the trend. 
 
-![Day 4](https://github.com/HighnessAtharva/Data-Science-Project/blob/main/Day4.jpg)
+![Day 4](https://github.com/HighnessAtharva/Data-Science-Project/blob/main/Day4.png)
 
 ## DAY 5
 
@@ -57,7 +57,7 @@ Extract data for up to three user-selected countries and save it to a new file E
 The new file should have the exact same format as the source file, i.e. first line of headers and then up to 3 lines for selected countries. 
 
 
-![Day 5](https://github.com/HighnessAtharva/Data-Science-Project/blob/main/Day5.jpg)
+![Day 5](https://github.com/HighnessAtharva/Data-Science-Project/blob/main/Day5.png)
 
 
 ## DAY 6
